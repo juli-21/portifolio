@@ -4,22 +4,68 @@
 * {
     margin: 0;
     padding: 0;
-}
-header{
-    width: 100%;
-    height: 100vh;
+    list-style: none;
+    text-decoration: none;
     overflow: hidden;
+}
+:root{
+    --font1: "Baloo Da 2", serif;
+    --font2: "Josefin Slab", serif;
+}
+.hamb {
+    width: 10em;
+    height: 2em;
+    z-index: 100;
+    position: fixed;
+    right: 2em;
+    top: 2.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    cursor: pointer;
+    transition: all 1.6s;
+    background-color: rgba(0, 0, 0, 0);
+}
+.showMenu .hamb{
+    right: 9em;
+}
+.line{
+    width: 2em;
+    height: 0.19em;
+    background-color: white;
+    box-shadow: .1em .1em .1em black;
+    transition: transform 1s;
+}
+
+.showMenu #line1{
+    transform: rotate(45deg) translate(0, .6em);
+    background-color: black;
+    box-shadow: 0, 0, 0;
+}
+.showMenu #line2{
+    visibility: hidden;
+}
+.showMenu #line3{
+    transform: rotate(-45deg) translate(0, -0.7em);
+    background-color: black;
+    box-shadow: 0, 0, 0;
+}
+
+.header {
+    width: 100%;
+    height: 100 vh;
     position: relative;
+    overflow: hidden;
 }
 .img-wrap {
     width: 100%;
-    height: 100%;
+    height: 100 vh;
     overflow: hidden;
     background-color: rgb(50, 50, 50);
 }
 .img-wrap img{
     height: 100%;
-    width: 100%;
+    width: 100 vh;
     object-fit: cover;
     opacity: 0.5;
     animation: zoom 20s
@@ -37,8 +83,9 @@ header{
     top: 35%;
     left: 5%;
     opacity: 100%;
+    
 }
-
+    
 @keyframes movetxt {
     0%{
         transform: translateY(15em);
@@ -50,7 +97,7 @@ header{
 .banner h1{
     color: white;
     font-size: 3.5em;
-    font-family: "Baloo Da 2", serif;
+    font-family: var(--font1);
     font-weight: 200;
     text-shadow: .05rem .05rem 2px rgba(0, 0, 0,.4);
     margin-bottom: .5em;
@@ -60,7 +107,7 @@ header{
 .banner p{
     color: white;
     font-size: 2em;
-    font-family: "Josefin Slab", serif;
+    font-family: var(--font2);
     text-shadow: .05rem .05rem 2px rgba(0, 0, 0,.4);
     margin-bottom: 1.9em;
     opacity: 100%;
@@ -68,7 +115,7 @@ header{
 }
 .banner button{
     font-size: 1.2em;
-    font-family:"Baloo Da 2";
+    font-family:var(--font1);
     padding: .2em .5em;
     letter-spacing: .1em;
     border: 0;
@@ -85,4 +132,56 @@ header{
 }
 button:hover{
     color: black;
+}
+.sidebar {
+    width: 20em;
+    height: 100vh;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    right: -20em;
+    transition: all 1s;
+}
+.showMenu .sidebar{
+    right: 0;
+
+}
+.menu{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.menu-link{
+    font-family: var(--font1);
+    font-size: 2em;
+    color: #555;
+    transition: color .5s;
+}
+.menu-link:hover{
+    color: #9733df;
+}
+.social-media{
+    position: absolute;
+    bottom: 5%;
+    font-size: 2.5em;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.social-media i{
+    background-color:#6a3093 ;
+    color: white;
+    height: 1.8em;
+    width: 1.8em;
+    font-size: .9em;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 50%;
+    transition: background-color .5s;
+}
+.social-media i:hover{
+    background-color: #9733df;
 }
